@@ -1,16 +1,5 @@
 # 🚀 MQL5 Algo Bot Builder - Complete Setup Guide
 
-## 📋 Table of Contents
-1. [Prerequisites](#prerequisites)
-2. [Project Structure](#project-structure)
-3. [Installation Steps](#installation-steps)
-4. [Running Locally](#running-locally)
-5. [Deployment Guide](#deployment-guide)
-6. [Usage Tutorial](#usage-tutorial)
-7. [Troubleshooting](#troubleshooting)
-
----
-
 ## 🔧 Prerequisites
 
 ### Required Software
