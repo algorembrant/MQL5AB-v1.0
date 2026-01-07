@@ -1,0 +1,45 @@
+# Core Framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+
+# MT5 Integration
+MetaTrader5==5.0.45
+
+# Database
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.25
+asyncpg==0.29.0
+
+# WebSocket support
+websockets==12.0
+python-socketio==5.11.0
+
+# Data processing
+pandas==2.1.4
+numpy==1.26.3
+
+# Environment management
+python-dotenv==1.0.0
+
+# CORS
+fastapi-cors==0.0.6
+
+# JSON handling
+orjson==3.9.12
+
+# Date/Time
+python-dateutil==2.8.2
+
+# Async support
+aiofiles==23.2.1
+
+# Validation
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# HTTP client
+httpx==0.26.0
+
+# Logging
+loguru==0.7.2
