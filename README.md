@@ -1,3 +1,11 @@
+
+
+
+https://github.com/user-attachments/assets/a0f03276-b93a-4403-a0d9-85d9d56b35b7
+
+
+
+
 # 🚀 MQL5 Algo Bot Builder Terminal
 
 ## 🔧 Prerequisites
