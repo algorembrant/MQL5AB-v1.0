@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  # Go Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - GO_PORT=8080
+      - PYTHON_BRIDGE_URL=http://python-bridge:5000
+    depends_on:
+      - python-bridge
+    networks:
+      - mt5-network
+    restart: unless-stopped
+
+  # Python MT5 Bridge
+  python-bridge:
+    build:
+      context: ./mt5-bridge
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+      - FLASK_PORT=5000
+    volumes:
+      # Mount MT5 data directory (adjust path for your system)
+      - ~/.wine/drive_c/Program Files/MetaTrader 5:/mt5:ro
+    networks:
+      - mt5-network
+    restart: unless-stopped
+
+  # React Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_WS_URL=ws://localhost:8080/ws
+      - REACT_APP_API_URL=http://localhost:5000
+    depends_on:
+      - backend
+    networks:
+      - mt5-network
+    restart: unless-stopped
+
+networks:
+  mt5-network:
+    driver: bridge
+
+volumes:
+  mt5-data:

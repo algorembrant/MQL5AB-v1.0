@@ -1,0 +1,37 @@
+{
+  "name": "mt5-trading-terminal-root",
+  "version": "1.0.0",
+  "description": "MT5 Trading Terminal - Full Stack Trading Platform",
+  "scripts": {
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && go mod download",
+    "install:python": "cd mt5-bridge && pip install -r requirements.txt",
+    "install:all": "npm run install:frontend && npm run install:backend && npm run install:python",
+    "start:backend": "cd backend && go run main.go",
+    "start:python": "cd mt5-bridge && python mt5_server.py",
+    "start:frontend": "cd frontend && npm start",
+    "dev": "concurrently \"npm run start:backend\" \"npm run start:python\" \"npm run start:frontend\"",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && go build -o bin/server main.go",
+    "test:backend": "cd backend && go test ./...",
+    "clean": "rm -rf frontend/node_modules frontend/build backend/bin mt5-bridge/venv"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "your-repo-url"
+  },
+  "keywords": [
+    "mt5",
+    "trading",
+    "forex",
+    "backtesting",
+    "websocket",
+    "react",
+    "golang"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
